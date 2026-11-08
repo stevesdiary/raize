@@ -617,3 +617,41 @@ export const syncIdempotencyRecords = pgTable('sync_idempotency_records', {
 }, (table) => [
   index('idx_sync_idempotency_expiry').on(table.expiresAt),
 ]);
+
+
+// ============================================================================
+// PART 11: COACH ONBOARDING & VERIFICATION (PRD 4-Pillar Pipeline & Paystack NUBAN)
+// ============================================================================
+
+export const coachProfiles = pgTable('coach_profiles', {
+  id: uuid('id').defaultRandom().primaryKey(),
+  userId: uuid('user_id').notNull().unique().references(() => users.id, { onDelete: 'cascade' }),
+  fullName: varchar('full_name', { length: 150 }).notNull(),
+  bio: text('bio').notNull(),
+  specialties: jsonb('specialties').$type<string[]>().notNull(),
+  experienceYears: integer('experience_years').notNull().default(1),
+  accreditationBody: varchar('accreditation_body', { length: 100 }).notNull(),
+  licenseNumber: varchar('license_number', { length: 100 }).notNull(),
+  certificateUrl: varchar('certificate_url', { length: 500 }),
+  governmentIdUrl: varchar('government_id_url', { length: 500 }),
+  idType: varchar('id_type', { length: 50 }).notNull().default('NIN'),
+  idNumber: varchar('id_number', { length: 100 }).notNull(),
+  verificationStatus: varchar('verification_status', { length: 32 }).notNull().default('pending'),
+  verifiedAt: timestamp('verified_at', { withTimezone: true }),
+  rejectionReason: text('rejection_reason'),
+  verifiedBy: uuid('verified_by').references(() => users.id, { onDelete: 'set null' }),
+  bankCode: varchar('bank_code', { length: 10 }).notNull(),
+  bankName: varchar('bank_name', { length: 100 }).notNull(),
+  accountNumber: varchar('account_number', { length: 10 }).notNull(),
+  accountName: varchar('account_name', { length: 150 }).notNull(),
+  paystackRecipientCode: varchar('paystack_recipient_code', { length: 100 }),
+  monthlyRetainerNgn: integer('monthly_retainer_ngn').notNull().default(25000),
+  ndpaDpaAccepted: boolean('ndpa_dpa_accepted').notNull().default(false),
+  ndpaDpaAcceptedAt: timestamp('ndpa_dpa_accepted_at', { withTimezone: true }),
+  isActive: boolean('is_active').notNull().default(false),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull(),
+}, (table) => [
+  index('idx_coach_profiles_verification').on(table.verificationStatus),
+  index('idx_coach_profiles_active').on(table.isActive),
+]);

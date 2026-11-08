@@ -188,3 +188,96 @@ export async function sendPaymentReceiptEmail(
     idempotencyKey: `receipt-${reference}`,
   });
 }
+
+
+/**
+ * Coach Application Received Acknowledgment Email
+ */
+export async function sendCoachApplicationReceivedEmail(to: string, fullName: string, accreditationBody: string) {
+  const name = fullName || 'Coach';
+  const subject = 'Coach Application Received — Raize Verification Review';
+  const html = `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #111827;">
+      <h2 style="color: #6366F1; font-size: 22px;">Application Received, ${name}!</h2>
+      <p style="font-size: 15px; color: #374151; line-height: 1.6;">
+        Thank you for applying to become a certified coach on the Raize platform. We have received your accreditation details (<strong>${accreditationBody}</strong>) and identity documents.
+      </p>
+      <div style="background-color: #F3F4F6; border-radius: 8px; padding: 20px; margin: 24px 0;">
+        <h4 style="margin-top: 0; color: #1F2937;">4-Pillar Verification in Progress</h4>
+        <ul style="margin-bottom: 0; padding-left: 20px; font-size: 14px; color: #4B5563;">
+          <li>National Identity & KYC Registry Validation (Smile ID)</li>
+          <li>Accreditation License & Certificate Audit</li>
+          <li>NDPA 2023 Coach Data Protection Agreement (DPA)</li>
+          <li>Paystack Revenue Share NUBAN Recipient Activation</li>
+        </ul>
+      </div>
+      <p style="font-size: 14px; color: #6B7280;">
+        Our compliance team reviews coach applications within 24–48 business hours. You will receive an email as soon as your profile is vetted.
+      </p>
+    </div>
+  `;
+
+  return sendTransactionalEmail({
+    to,
+    subject,
+    html,
+    text: `Hello ${name}, your Raize Coach application with ${accreditationBody} credentials has been received. Our compliance team is currently reviewing your documentation.`,
+    idempotencyKey: `coach-app-${to}`,
+  });
+}
+
+/**
+ * Coach Verification Status Update Email (Approved or Rejected)
+ */
+export async function sendCoachVerificationStatusEmail(
+  to: string,
+  fullName: string,
+  status: 'verified' | 'rejected',
+  rejectionReason?: string
+) {
+  const name = fullName || 'Coach';
+  const isApproved = status === 'verified';
+  const subject = isApproved
+    ? 'Congratulations! Your Raize Coach Accreditation is Verified'
+    : 'Update on Your Raize Coach Application';
+
+  const html = isApproved
+    ? `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #111827;">
+        <h2 style="color: #10B981; font-size: 22px;">Welcome to the Raize Coach Network, ${name}!</h2>
+        <p style="font-size: 15px; color: #374151; line-height: 1.6;">
+          Your accreditation and identity documents have been approved by our compliance team. Your coach profile is now active on the <strong>1-on-1 Certified Coach Tier</strong>.
+        </p>
+        <div style="background-color: #ECFDF5; border-left: 4px solid #10B981; padding: 16px; margin: 20px 0;">
+          <p style="margin: 0; font-size: 14px; color: #065F46; font-weight: 500;">
+            Athletes can now book 1-on-1 coaching with you. Payouts are routed directly to your verified NUBAN account via Paystack Transfer.
+          </p>
+        </div>
+      </div>
+    `
+    : `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; color: #111827;">
+        <h2 style="color: #EF4444; font-size: 22px;">Application Review Update</h2>
+        <p style="font-size: 15px; color: #374151; line-height: 1.6;">
+          Hello ${name}, thank you for your patience while our compliance team reviewed your application.
+        </p>
+        <div style="background-color: #FEF2F2; border-left: 4px solid #EF4444; padding: 16px; margin: 20px 0;">
+          <p style="margin: 0; font-size: 14px; color: #991B1B;">
+            <strong>Reason for Action:</strong> ${rejectionReason || 'Accreditation credentials could not be verified with the issuing board.'}
+          </p>
+        </div>
+        <p style="font-size: 14px; color: #6B7280;">
+          You may re-apply with updated credential documentation at any time through the coach portal.
+        </p>
+      </div>
+    `;
+
+  return sendTransactionalEmail({
+    to,
+    subject,
+    html,
+    text: isApproved
+      ? `Congratulations ${name}! Your Raize coach accreditation has been approved.`
+      : `Hello ${name}, your coach application was not approved. Reason: ${rejectionReason || 'Credential verification unsuccessful.'}`,
+  });
+}

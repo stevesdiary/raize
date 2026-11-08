@@ -18,6 +18,7 @@ import { communityRoutes } from './modules/community/community.routes.js';
 import { billingRoutes } from './modules/billing/billing.routes.js';
 import { syncRoutes } from './modules/sync/sync.routes.js';
 import { dashboardRoutes } from './modules/dashboard/dashboard.routes.js';
+import { coachesRoutes } from './modules/coaches/coaches.routes.js';
 
 export function buildApp(): FastifyInstance {
   const app = fastify({
@@ -86,6 +87,7 @@ export function buildApp(): FastifyInstance {
     v1.register(billingRoutes, { prefix: '/billing' });
     v1.register(syncRoutes, { prefix: '/sync' });
     v1.register(dashboardRoutes, { prefix: '/dashboard' });
+    v1.register(coachesRoutes, { prefix: '/coaches' });
   }, { prefix: '/api/v1' });
 
   return app;
