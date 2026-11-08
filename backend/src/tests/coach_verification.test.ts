@@ -231,3 +231,4 @@ describe('Coach Onboarding & 4-Pillar Verification Portal Endpoints', () => {
     expect(body.data.specialties).toContain('olympic_lifting');
   });
 });
+

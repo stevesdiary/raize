@@ -531,3 +531,4 @@ export const coachesRoutes: FastifyPluginAsync = async (fastify) => {
     }
   );
 };
+
