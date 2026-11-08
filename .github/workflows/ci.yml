@@ -68,6 +68,13 @@ jobs:
           NODE_ENV: test
         run: pnpm db:migrate
 
+      - name: Seed Database
+        working-directory: ./backend
+        env:
+          DATABASE_URL: postgresql://postgres:dev_wRShFUkaxicemLWVTrt1@localhost:5432/raize_fitness
+          NODE_ENV: test
+        run: pnpm db:seed
+
       - name: Typecheck & Build Backend
         working-directory: ./backend
         run: pnpm build
