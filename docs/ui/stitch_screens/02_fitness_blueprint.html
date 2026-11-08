@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Raize — Your Fitness Blueprint</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#00a572",
+            "error": "#ffb4ab",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-primary-fixed": "#07006c",
+            "surface-container-high": "#262a35",
+            "secondary-fixed-dim": "#4edea3",
+            "on-primary": "#1000a9",
+            "background": "#0f131d",
+            "on-secondary-container": "#00311f",
+            "surface-variant": "#313540",
+            "surface-tint": "#c0c1ff",
+            "on-tertiary-container": "#180092",
+            "tertiary-container": "#8582ff",
+            "surface-container-lowest": "#0a0e18",
+            "tertiary": "#c3c0ff",
+            "surface-dim": "#0f131d",
+            "surface-container": "#1c1f2a",
+            "on-background": "#dfe2f1",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-primary-container": "#0d0096",
+            "primary-fixed": "#e1e0ff",
+            "on-secondary": "#003824",
+            "surface": "#0f131d",
+            "inverse-primary": "#494bd6",
+            "tertiary-fixed-dim": "#c3c0ff",
+            "primary-container": "#8083ff",
+            "on-error-container": "#ffdad6",
+            "inverse-on-surface": "#2c303b",
+            "tertiary-fixed": "#e2dfff",
+            "on-tertiary-fixed": "#0f0069",
+            "secondary": "#4edea3",
+            "surface-container-highest": "#313540",
+            "on-secondary-fixed": "#002113",
+            "surface-bright": "#353944",
+            "on-secondary-fixed-variant": "#005236",
+            "inverse-surface": "#dfe2f1",
+            "surface-container-low": "#171b26",
+            "on-tertiary-fixed-variant": "#3323cc",
+            "on-surface": "#dfe2f1",
+            "error-container": "#93000a",
+            "secondary-fixed": "#6ffbbe",
+            "on-error": "#690005",
+            "outline-variant": "#464554",
+            "on-tertiary": "#1d00a5",
+            "outline": "#908fa0",
+            "on-surface-variant": "#c7c4d7",
+            "primary": "#c0c1ff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-sm": "0.5rem",
+            "margin": "1.25rem"
+          },
+          "fontFamily": {
+            "label-caps-md": [
+              "Space Grotesk"
+            ],
+            "display-hero-mobile": [
+              "Space Grotesk"
+            ],
+            "body-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "metric-numeral-md": [
+              "Space Grotesk"
+            ],
+            "metric-numeral-lg": [
+              "Space Grotesk"
+            ],
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-sm": [
+              "Space Grotesk"
+            ],
+            "display-hero": [
+              "Space Grotesk"
+            ],
+            "label-caps-sm": [
+              "Space Grotesk"
+            ],
+            "headline-md": [
+              "Space Grotesk"
+            ],
+            "body-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg": [
+              "Space Grotesk"
+            ]
+          },
+          "fontSize": {
+            "label-caps-md": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.08em",
+                "fontWeight": "700"
+              }
+            ],
+            "display-hero-mobile": [
+              "36px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.03em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.01em",
+                "fontWeight": "400"
+              }
+            ],
+            "metric-numeral-md": [
+              "24px",
+              {
+                "lineHeight": "28px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "700"
+              }
+            ],
+            "metric-numeral-lg": [
+              "32px",
+              {
+                "lineHeight": "36px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "letterSpacing": "0em",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-sm": [
+              "20px",
+              {
+                "lineHeight": "26px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "display-hero": [
+              "48px",
+              {
+                "lineHeight": "52px",
+                "letterSpacing": "-0.04em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-caps-sm": [
+              "10px",
+              {
+                "lineHeight": "12px",
+                "letterSpacing": "0.1em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-md": [
+              "24px",
+              {
+                "lineHeight": "30px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0em",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg": [
+              "32px",
+              {
+                "lineHeight": "38px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #0B0F19;
+      color: #dfe2f1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .glow-indigo {
+      box-shadow: 0 0 28px -6px rgba(128, 131, 255, 0.28);
+    }
+    
+    .glow-mint {
+      box-shadow: 0 0 24px -4px rgba(78, 222, 163, 0.25);
+    }
+    
+    .hairline-border {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .hairline-indigo {
+      border: 1px solid rgba(192, 193, 255, 0.28);
+    }
+
+    /* Subtle custom scrollbar for horizontal calendar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest min-h-screen flex justify-center selection:bg-primary selection:text-on-primary-container">
+<!-- Mobile Viewport Container (Apple & Cyber-Athletic Ergonomics) -->
+<div class="w-full max-w-md bg-surface-container-lowest min-h-screen relative flex flex-col pb-32">
+<!-- TopAppBar Anchor from Shared Components -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-5 py-3.5 max-w-md mx-auto">
+<button aria-label="Go Back" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high hover:text-on-surface active:scale-95 transition-all duration-150 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-wider">RAIZE</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_#4edea3]"></span>
+</div>
+<button aria-label="Close" class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high hover:text-on-surface active:scale-95 transition-all duration-150 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<!-- Main Screen Content Canvas -->
+<main class="px-margin flex-1 flex flex-col pt-space-md gap-space-lg">
+<!-- Header Title & Program Classifier -->
+<section class="flex flex-col gap-2">
+<div class="inline-flex items-center gap-2 self-start px-2.5 py-1 rounded-full bg-surface-container border border-secondary/40 glow-mint">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-caps-sm text-label-caps-sm text-secondary tracking-wider font-semibold">
+            WEIGHT MANAGEMENT • BEGINNER
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">
+          Your Fitness Blueprint
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Precision metabolic architecture calculated for baseline hypertrophy and calibrated fat loss.
+        </p>
+</section>
+<!-- SECTION 1: Hero Classification Card (Glassmorphic AMOLED Dial & Telemetry) -->
+<section class="relative rounded-xl bg-surface-container-low p-space-md hairline-indigo glow-indigo overflow-hidden">
+<!-- Ambient radial glow behind dial -->
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<!-- Concentric Precision Energy Dial -->
+<div class="relative w-48 h-48 flex items-center justify-center my-2">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 160 160">
+<!-- Background Ring Track -->
+<circle class="text-surface-variant/40" cx="80" cy="80" fill="transparent" r="68" stroke="currentColor" stroke-width="9"></circle>
+<!-- Kinetic Emerald/Indigo Target Arc -->
+<circle class="transition-all duration-1000 ease-out" cx="80" cy="80" fill="transparent" r="68" stroke="url(#calorieGradient)" stroke-dasharray="427" stroke-dashoffset="110" stroke-linecap="round" stroke-width="9"></circle>
+<defs>
+<lineargradient id="calorieGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#8083ff"></stop>
+<stop offset="100%" stop-color="#4edea3"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Center Metric Telemetry -->
+<div class="absolute flex flex-col items-center">
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant tracking-wider">DAILY TARGET</span>
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-on-surface tracking-tight mt-0.5">2,045</span>
+<span class="font-label-caps-md text-label-caps-md text-secondary font-bold">KCAL</span>
+</div>
+</div>
+<!-- Mifflin-St Jeor TDEE with 500 kcal deficit explanation caption -->
+<div class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container border border-outline-variant/30 mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="calculate">calculate</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Mifflin-St Jeor TDEE with <span class="text-secondary font-semibold">500 kcal deficit</span>
+</span>
+</div>
+<!-- 3-Column Sub-Metrics Grid -->
+<div class="grid grid-cols-3 gap-2 w-full mt-5 pt-4 border-t border-outline-variant/20">
+<!-- Metric 1: BMR -->
+<div class="flex flex-col items-center text-center p-2 rounded-lg bg-surface-container/70 border border-outline-variant/20">
+<span class="material-symbols-outlined text-[18px] text-primary mb-1" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant">BMR</span>
+<span class="font-metric-numeral-md text-[18px] leading-5 text-on-surface mt-1">1,620</span>
+<span class="font-label-caps-sm text-[9px] text-on-surface-variant">kcal</span>
+</div>
+<!-- Metric 2: Weekly Training -->
+<div class="flex flex-col items-center text-center p-2 rounded-lg bg-surface-container/70 border border-outline-variant/20">
+<span class="material-symbols-outlined text-[18px] text-secondary mb-1" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant">FREQUENCY</span>
+<span class="font-metric-numeral-md text-[18px] leading-5 text-on-surface mt-1">3 Days</span>
+<span class="font-label-caps-sm text-[9px] text-secondary">per week</span>
+</div>
+<!-- Metric 3: Avg Duration -->
+<div class="flex flex-col items-center text-center p-2 rounded-lg bg-surface-container/70 border border-outline-variant/20">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed-dim mb-1" data-icon="timer">timer</span>
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant">AVG SESSION</span>
+<span class="font-metric-numeral-md text-[18px] leading-5 text-on-surface mt-1">35 min</span>
+<span class="font-label-caps-sm text-[9px] text-on-surface-variant">zone 2 / rpe 6</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Recommended Activities (Weighted match scores) -->
+<section class="flex flex-col gap-3">
+<div class="flex justify-between items-baseline">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+            Recommended Activities
+          </h2>
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-wider font-semibold">ALGORITHMIC MATCH</span>
+</div>
+<!-- Activity Card 1: Brisk Walking -->
+<div class="rounded-xl bg-surface-container-low p-space-md hairline-border hover:border-primary/40 transition-all duration-200 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/30 text-secondary">
+<span class="material-symbols-outlined text-[24px]" data-icon="directions_walk">directions_walk</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[17px] font-bold text-on-surface">Brisk Walking</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps-sm bg-secondary-container/20 text-secondary border border-secondary/40 font-semibold tracking-wider">
+                    PRIMARY
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Optimal for beginner metabolic conditioning
+                </p>
+</div>
+</div>
+<!-- Match Score Badge -->
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-0.5">
+<span class="font-metric-numeral-md text-[20px] text-secondary font-bold">95</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">/100</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-secondary-fixed tracking-wider">MATCH</span>
+</div>
+</div>
+<!-- Quick Telemetry Chips -->
+<div class="flex items-center gap-2 pt-1 border-t border-outline-variant/20">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-[12px] border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="speed">speed</span>
+              Pace: 5.2 - 5.8 km/h
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-[12px] border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="avg_pace">avg_pace</span>
+              110-125 SPM Cadence
+            </span>
+</div>
+</div>
+<!-- Activity Card 2: Bodyweight Resistance Circuit -->
+<div class="rounded-xl bg-surface-container-low p-space-md hairline-border hover:border-primary/40 transition-all duration-200 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant/30 text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="fitness_center">fitness_center</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-[17px] font-bold text-on-surface">Bodyweight Circuit</h3>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps-sm bg-primary-container/20 text-primary border border-primary/40 font-semibold tracking-wider">
+                    SUPPORTING
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Develops foundation compound strength
+                </p>
+</div>
+</div>
+<!-- Match Score Badge -->
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-0.5">
+<span class="font-metric-numeral-md text-[20px] text-primary font-bold">90</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">/100</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-primary tracking-wider">MATCH</span>
+</div>
+</div>
+<!-- Quick Telemetry Chips -->
+<div class="flex items-center gap-2 pt-1 border-t border-outline-variant/20">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-[12px] border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="repeat">repeat</span>
+              3 Sets / 12 Reps
+            </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-on-surface font-body-sm text-[12px] border border-outline-variant/30">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="timelapse">timelapse</span>
+              60s Rest Interval
+            </span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: 7-Day Training Schedule -->
+<section class="flex flex-col gap-3">
+<div class="flex justify-between items-baseline">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+            7-Day Training Schedule
+          </h2>
+<span class="font-label-caps-sm text-label-caps-sm text-secondary font-semibold">CURRENT CADENCE</span>
+</div>
+<!-- Horizontal sleek calendar strip -->
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar -mx-margin px-margin">
+<!-- Monday (Today / Highlighted) -->
+<div class="flex-shrink-0 w-28 rounded-xl bg-surface-container p-3 border border-secondary/50 glow-mint flex flex-col justify-between h-36">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-md text-label-caps-md text-secondary font-bold">MON</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="my-auto flex flex-col gap-1">
+<span class="material-symbols-outlined text-[20px] text-secondary" data-icon="exercise">exercise</span>
+<span class="font-body-sm text-[12px] font-semibold text-on-surface leading-tight">Bodyweight Strength</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-secondary uppercase font-semibold">Active Workout</span>
+</div>
+<!-- Tuesday -->
+<div class="flex-shrink-0 w-28 rounded-xl bg-surface-container-low p-3 hairline-border flex flex-col justify-between h-36 opacity-75">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-md text-label-caps-md text-on-surface-variant font-bold">TUE</span>
+</div>
+<div class="my-auto flex flex-col gap-1">
+<span class="material-symbols-outlined text-[20px] text-outline" data-icon="bed">bed</span>
+<span class="font-body-sm text-[12px] font-medium text-on-surface-variant">Rest &amp; Regulate</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-outline uppercase">Recovery</span>
+</div>
+<!-- Wednesday -->
+<div class="flex-shrink-0 w-28 rounded-xl bg-surface-container-low p-3 hairline-border flex flex-col justify-between h-36">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-md text-label-caps-md text-on-surface font-bold">WED</span>
+</div>
+<div class="my-auto flex flex-col gap-1">
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="sprint">sprint</span>
+<span class="font-body-sm text-[12px] font-semibold text-on-surface leading-tight">Brisk Walking</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-primary uppercase font-semibold">Cardio Badge</span>
+</div>
+<!-- Thursday -->
+<div class="flex-shrink-0 w-28 rounded-xl bg-surface-container-low p-3 hairline-border flex flex-col justify-between h-36 opacity-75">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-md text-label-caps-md text-on-surface-variant font-bold">THU</span>
+</div>
+<div class="my-auto flex flex-col gap-1">
+<span class="material-symbols-outlined text-[20px] text-outline" data-icon="bed">bed</span>
+<span class="font-body-sm text-[12px] font-medium text-on-surface-variant">Rest Day</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-outline uppercase">Recovery</span>
+</div>
+<!-- Friday -->
+<div class="flex-shrink-0 w-28 rounded-xl bg-surface-container-low p-3 hairline-border flex flex-col justify-between h-36">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-md text-label-caps-md text-on-surface font-bold">FRI</span>
+</div>
+<div class="my-auto flex flex-col gap-1">
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="fitness_center">fitness_center</span>
+<span class="font-body-sm text-[12px] font-semibold text-on-surface leading-tight">Bodyweight Strength</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-primary uppercase font-semibold">Active Workout</span>
+</div>
+<!-- Saturday -->
+<div class="flex-shrink-0 w-28 rounded-xl bg-surface-container-low p-3 hairline-border flex flex-col justify-between h-36">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-md text-label-caps-md text-on-surface font-bold">SAT</span>
+</div>
+<div class="my-auto flex flex-col gap-1">
+<span class="material-symbols-outlined text-[20px] text-secondary" data-icon="hiking">hiking</span>
+<span class="font-body-sm text-[12px] font-semibold text-on-surface leading-tight">Recovery Walk</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-secondary uppercase font-semibold">Light Activity</span>
+</div>
+<!-- Sunday -->
+<div class="flex-shrink-0 w-28 rounded-xl bg-surface-container-low p-3 hairline-border flex flex-col justify-between h-36 opacity-75">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-md text-label-caps-md text-on-surface-variant font-bold">SUN</span>
+</div>
+<div class="my-auto flex flex-col gap-1">
+<span class="material-symbols-outlined text-[20px] text-outline" data-icon="self_improvement">self_improvement</span>
+<span class="font-body-sm text-[12px] font-medium text-on-surface-variant">System Rest</span>
+</div>
+<span class="font-label-caps-sm text-[9px] text-outline uppercase">Full Rest</span>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Nutrition & Recovery Guidance (Dual Telemetry Bento) -->
+<section class="flex flex-col gap-3">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+          Nutrition &amp; Recovery Guidance
+        </h2>
+<div class="grid grid-cols-2 gap-3">
+<!-- Protein Target Card -->
+<div class="rounded-xl bg-surface-container-low p-space-md hairline-border flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant">PROTEIN TARGET</span>
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="egg_alt">egg_alt</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-on-surface">110</span>
+<span class="font-label-caps-md text-label-caps-md text-primary font-bold">G / DAY</span>
+</div>
+<!-- Macro progress indicator bar -->
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[72%]"></div>
+</div>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">
+              1.6g/kg lean mass threshold to preserve metabolic volume.
+            </p>
+</div>
+<!-- Hydration Target Card -->
+<div class="rounded-xl bg-surface-container-low p-space-md hairline-border flex flex-col justify-between gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps-sm text-label-caps-sm text-on-surface-variant">HYDRATION</span>
+<span class="material-symbols-outlined text-[18px] text-secondary" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-numeral-lg text-metric-numeral-lg text-on-surface">3.0</span>
+<span class="font-label-caps-md text-label-caps-md text-secondary font-bold">L / DAY</span>
+</div>
+<!-- Hydration step pips -->
+<div class="flex items-center gap-1 mt-2">
+<span class="h-1.5 flex-1 rounded-full bg-secondary"></span>
+<span class="h-1.5 flex-1 rounded-full bg-secondary"></span>
+<span class="h-1.5 flex-1 rounded-full bg-secondary"></span>
+<span class="h-1.5 flex-1 rounded-full bg-surface-container-high"></span>
+</div>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-tight">
+              Electrolyte balance benchmark for muscle glycogen delivery.
+            </p>
+</div>
+</div>
+<!-- Sleep & Neuromuscular Repair Card -->
+<div class="rounded-xl bg-surface-container-low p-space-md hairline-border flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-fixed-dim border border-outline-variant/30 flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" data-icon="bedtime">bedtime</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-wider font-semibold">SLEEP WINDOW</span>
+<span class="font-metric-numeral-md text-[15px] font-bold text-on-surface">7.5h – 8.5h</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              7.5h - 8.5h target sleep for neuro-muscular repair, endocrine balancing, and systemic CNS recovery between loading sessions.
+            </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Dock (Linear Blueprint Action) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
+<div class="w-full max-w-md bg-surface-container-lowest/90 backdrop-blur-xl border-t border-outline-variant/30 px-margin py-3.5 flex items-center gap-3 pointer-events-auto">
+<!-- Customize Plan ghost button -->
+<button class="h-14 px-4 rounded-xl bg-surface-container hairline-border font-label-caps-md text-label-caps-md text-on-surface tracking-wider uppercase flex items-center justify-center hover:bg-surface-container-high active:scale-95 transition-all">
+          Customize
+        </button>
+<!-- Primary Kinetic CTA: Activate Blueprint -->
+<button class="h-14 flex-1 rounded-xl bg-primary-container text-on-primary-container font-label-caps-md text-label-caps-md font-bold tracking-wider uppercase flex items-center justify-center gap-2 glow-indigo hover:brightness-110 active:scale-[0.98] transition-all">
+<span>Activate Blueprint</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

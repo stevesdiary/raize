@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Raize Elite Athletic OS - Sign In</title>
+<!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#1000a9",
+            "on-tertiary-container": "#180092",
+            "on-secondary-fixed-variant": "#005236",
+            "secondary-fixed-dim": "#4edea3",
+            "surface-dim": "#0f131d",
+            "surface-container-high": "#262a35",
+            "surface-tint": "#c0c1ff",
+            "error": "#ffb4ab",
+            "surface-container-low": "#171b26",
+            "on-secondary-container": "#00311f",
+            "inverse-on-surface": "#2c303b",
+            "on-surface": "#dfe2f1",
+            "on-secondary-fixed": "#002113",
+            "on-secondary": "#003824",
+            "surface-container-highest": "#313540",
+            "surface-container": "#1c1f2a",
+            "outline-variant": "#464554",
+            "tertiary-fixed": "#e2dfff",
+            "primary-container": "#8083ff",
+            "on-background": "#dfe2f1",
+            "secondary-fixed": "#6ffbbe",
+            "on-tertiary-fixed": "#0f0069",
+            "tertiary-fixed-dim": "#c3c0ff",
+            "on-tertiary-fixed-variant": "#3323cc",
+            "on-error-container": "#ffdad6",
+            "tertiary-container": "#8582ff",
+            "inverse-surface": "#dfe2f1",
+            "secondary": "#4edea3",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "inverse-primary": "#494bd6",
+            "tertiary": "#c3c0ff",
+            "surface-bright": "#353944",
+            "surface-container-lowest": "#0a0e18",
+            "on-primary-fixed": "#07006c",
+            "on-primary-container": "#0d0096",
+            "error-container": "#93000a",
+            "background": "#0f131d",
+            "primary-fixed-dim": "#c0c1ff",
+            "primary": "#c0c1ff",
+            "on-tertiary": "#1d00a5",
+            "on-error": "#690005",
+            "primary-fixed": "#e1e0ff",
+            "secondary-container": "#00a572",
+            "on-surface-variant": "#c7c4d7",
+            "surface": "#0f131d",
+            "outline": "#908fa0",
+            "surface-variant": "#313540"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "margin": "1.25rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "display-hero": ["Space Grotesk"],
+            "display-hero-mobile": ["Space Grotesk"],
+            "metric-numeral-md": ["Space Grotesk"],
+            "label-caps-md": ["Space Grotesk"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Space Grotesk"],
+            "metric-numeral-lg": ["Space Grotesk"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-caps-sm": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "body-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "display-hero": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "metric-numeral-md": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-caps-md": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "metric-numeral-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }],
+            "label-caps-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Smooth AMOLED kinetic glows */
+    .glow-indigo-focus:focus-within {
+      box-shadow: 0 0 0 1px #8083ff, 0 0 24px -4px rgba(128, 131, 255, 0.35);
+      border-color: #8083ff;
+    }
+    .hud-glow {
+      box-shadow: 0 0 30px -8px rgba(128, 131, 255, 0.28);
+    }
+    .holo-border {
+      background: linear-gradient(135deg, rgba(128, 131, 255, 0.35) 0%, rgba(78, 222, 163, 0.2) 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest text-on-surface antialiased min-h-screen flex items-center justify-center p-0 sm:p-4 selection:bg-primary-container selection:text-on-primary-container">
+<!-- iPhone Shell Frame Container (Mobile ergonomic canvas) -->
+<div class="w-full max-w-[420px] min-h-screen sm:min-h-[880px] sm:max-h-[920px] bg-surface flex flex-col justify-between relative sm:rounded-[48px] sm:border sm:border-outline-variant/30 shadow-2xl overflow-hidden">
+<!-- Top Ambient Kinetic Background Bleed -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-primary-container/10 rounded-full blur-[90px] pointer-events-none"></div>
+<div class="absolute top-48 -right-24 w-60 h-60 bg-secondary-container/10 rounded-full blur-[80px] pointer-events-none"></div>
+<!-- UPPER SECTION: iOS Status Bar + Dynamic Island + Navigation -->
+<div class="w-full pt-2 z-20">
+<!-- iOS Status Bar & Dynamic Island -->
+<div class="w-full px-7 pt-2 flex items-center justify-between text-on-surface select-none">
+<!-- 09:41 Time -->
+<span class="font-body-md text-[15px] font-semibold tracking-tight text-on-surface">09:41</span>
+<!-- Apple Dynamic Island Pill -->
+<div class="w-28 h-7 bg-surface-container-lowest border border-outline-variant/30 rounded-full flex items-center justify-between px-2.5 shadow-inner">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-high flex items-center justify-center">
+<div class="w-1 h-1 rounded-full bg-secondary"></div>
+</div>
+<div class="w-2.5 h-2.5 rounded-full bg-surface-container-high"></div>
+</div>
+<!-- System Icons: Cellular, Wifi, Battery -->
+<div class="flex items-center space-x-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<!-- Battery icon with terminal nub -->
+<div class="flex items-center">
+<div class="w-5 h-2.5 border border-on-surface/80 rounded-[3px] p-[1.5px] flex items-center">
+<div class="h-full w-full bg-on-surface rounded-[1.5px]"></div>
+</div>
+<div class="w-[1.5px] h-1 bg-on-surface/80 rounded-r-[1px] ml-[1px]"></div>
+</div>
+</div>
+</div>
+<!-- Top Navigation Component (Shared Component: TopAppBar with suppress rules applied for auth) -->
+<div class="flex justify-between items-center w-full px-5 py-3.5 max-w-md mx-auto">
+<button aria-label="Go Back" class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<!-- Subtle Raize Elite Brand Symbol Tag -->
+<div class="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-surface-container-low/70 border border-outline-variant/20">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></div>
+<span class="font-display-hero text-[12px] font-bold tracking-wider text-on-surface">RAIZE<span class="text-primary-container">OS</span></span>
+</div>
+<button aria-label="Close" class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high active:scale-95 transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- MAIN SCROLLABLE CONTENT CANVAS -->
+<div class="w-full px-5 py-2 z-10 flex-1 flex flex-col justify-start overflow-y-auto no-scrollbar">
+<!-- Header Module -->
+<div class="mt-1 mb-5">
+<!-- Eyebrow Pill Tag -->
+<div class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-primary-container/10 border border-primary-container/30 mb-2.5">
+<span class="w-1 h-1 rounded-full bg-primary-container"></span>
+<span class="font-label-caps-sm text-label-caps-sm text-primary tracking-widest uppercase">RAIZE ELITE ATHLETIC OS</span>
+</div>
+<!-- Welcome Back Headline -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight font-bold">
+          Welcome Back
+        </h1>
+<!-- Subheader Statement -->
+<p class="font-body-md text-body-md text-on-surface-variant mt-1.5 leading-relaxed">
+          Sign in to access your active training plan, GPS logs, and nutrition diary.
+        </p>
+</div>
+<!-- Authentication Form Elements -->
+<form class="space-y-3.5" onsubmit="event.preventDefault();">
+<!-- Email Input Field Container -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center px-1">
+<label class="font-label-caps-sm text-label-caps-sm text-on-surface-variant tracking-wider uppercase" for="email">Athlete ID / Email</label>
+<span class="font-label-caps-sm text-label-caps-sm text-secondary flex items-center space-x-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Encrypted</span>
+</span>
+</div>
+<div class="relative flex items-center rounded-xl bg-surface-container-low border border-outline-variant/40 transition-all duration-200 glow-indigo-focus">
+<span class="absolute left-3.5 text-on-surface-variant/80 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</span>
+<input autocomplete="email" class="w-full h-13 py-3 pl-11 pr-10 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none border-none focus:ring-0 rounded-xl" id="email" placeholder="athlete@raize.io" required="" type="email" value="athlete@raize.io"/>
+<span class="absolute right-3.5 text-secondary flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</span>
+</div>
+</div>
+<!-- Password Input Field Container -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center px-1">
+<label class="font-label-caps-sm text-label-caps-sm text-on-surface-variant tracking-wider uppercase" for="password">Master Passcode</label>
+<span class="font-label-caps-sm text-label-caps-sm text-outline-variant">Biometrics Active</span>
+</div>
+<div class="relative flex items-center rounded-xl bg-surface-container-low border border-outline-variant/40 transition-all duration-200 glow-indigo-focus">
+<span class="absolute left-3.5 text-on-surface-variant/80 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</span>
+<input autocomplete="current-password" class="w-full h-13 py-3 pl-11 pr-11 bg-transparent text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none border-none focus:ring-0 rounded-xl tracking-widest" id="password" placeholder="••••••••••••" required="" type="password" value="••••••••••••••"/>
+<!-- Toggle Visibility -->
+<button aria-label="Toggle password visibility" class="absolute right-3.5 text-on-surface-variant hover:text-on-surface transition-colors p-1" onclick="const p = document.getElementById('password'); const icon = this.querySelector('span'); if(p.type==='password'){p.type='text'; icon.textContent='visibility_off';}else{p.type='password'; icon.textContent='visibility';}" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Inline Utility Row: Apple Switch + Forgot Password -->
+<div class="flex items-center justify-between pt-0.5 pb-1 px-1">
+<!-- iOS Custom Toggle for Remember Me -->
+<label class="flex items-center space-x-2.5 cursor-pointer select-none">
+<div class="relative">
+<input checked="" class="sr-only peer" id="remember-me" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:bg-primary-container transition-colors duration-200"></div>
+<div class="absolute left-[2px] top-[2px] bg-on-surface w-5 h-5 rounded-full transition-transform duration-200 peer-checked:translate-x-5 shadow-sm"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Remember Device</span>
+</label>
+<!-- Discreet Forgot Password Link -->
+<a class="font-body-sm text-body-sm text-primary hover:text-primary-fixed-dim transition-colors font-medium hover:underline" href="#">
+            Forgot Passcode?
+          </a>
+</div>
+<!-- Primary Kinetic CTA Action -->
+<button class="w-full h-14 rounded-2xl bg-primary-container hover:bg-tertiary-container active:scale-[0.98] transition-all duration-150 flex items-center justify-center space-x-2 font-display-hero text-[15px] font-bold uppercase tracking-wider text-on-primary-container shadow-lg shadow-primary-container/20 mt-2" type="submit">
+<span>Sign In to Terminal</span>
+<span class="material-symbols-outlined text-[19px]">arrow_forward</span>
+</button>
+</form>
+<!-- Biometric Quick-Action Card (Apple Face ID) -->
+<div class="mt-3.5">
+<button class="w-full p-[1px] rounded-2xl holo-border transition-transform active:scale-[0.98] group" type="button">
+<div class="w-full h-full bg-surface-container-low rounded-[15px] px-4 py-3 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<!-- Authentic Apple Face ID glyph representation -->
+<div class="w-9 h-9 rounded-xl bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary group-hover:text-secondary transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+<path d="M9 9h.01M15 9h.01"></path>
+<path d="M9 15c.5.5 1.5 1 3 1s2.5-.5 3-1"></path>
+<path d="M12 11v2"></path>
+</svg>
+</div>
+<div class="text-left">
+<div class="font-body-md text-body-md font-semibold text-on-surface">Sign In with Face ID</div>
+<div class="font-label-caps-sm text-[10px] text-on-surface-variant flex items-center space-x-1">
+<span class="w-1 h-1 rounded-full bg-secondary"></span>
+<span>Sensor Ready • Raize Secure Enclave</span>
+</div>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container border border-outline-variant/30 flex items-center justify-center text-on-surface-variant group-hover:text-primary">
+<span class="material-symbols-outlined text-[15px]">sensors</span>
+</div>
+</div>
+</button>
+</div>
+<!-- Social Authentication Separator -->
+<div class="relative my-4 flex items-center justify-center">
+<div class="w-full border-t border-outline-variant/20"></div>
+<span class="absolute bg-surface px-3 font-label-caps-sm text-[10px] text-outline tracking-widest uppercase">
+          Or Continue With
+        </span>
+</div>
+<!-- Social Authentication Row (Apple ID + Google) -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Apple ID Auth -->
+<button class="h-12 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:bg-surface-container-high hover:border-outline-variant/60 active:scale-95 transition-all duration-150 flex items-center justify-center space-x-2 text-on-surface font-body-sm font-semibold" type="button">
+<!-- Authentic Apple Logo Icon -->
+<svg class="w-4 h-4 fill-current" viewbox="0 0 170 170">
+<path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.69-7.8-12-14.28-6.19-9.35-11.04-20.12-14.54-32.31-3.5-12.19-5.25-23.75-5.25-34.69 0-14.57 3.65-26.68 10.95-36.33 7.3-9.65 16.5-14.57 27.6-14.77 5.26 0 10.84 1.34 16.74 4.02 5.9 2.68 9.77 4.08 11.61 4.2 1.62-.22 5.66-1.68 12.12-4.38 6.46-2.7 11.83-3.89 16.11-3.58 12.02.6 21.6 4.96 28.74 13.08-10.51 6.35-15.65 15.19-15.42 26.52.23 9.47 3.91 17.39 11.04 23.77 7.13 6.38 15.62 9.94 25.47 10.68-2.12 6.53-4.69 13.04-7.7 19.53zM119.22 33.15c0-6.9 2.53-13.62 7.59-20.15 5.06-6.53 11.45-10.87 19.17-13 1.23 6.64-.13 13.26-4.08 19.86-3.95 6.6-9.98 11.02-18.08 13.29-.89-.99-1.96-2.22-3.21-3.7-1.25-1.48-1.39-2.2-1.39-2.2v5.9z"></path>
+</svg>
+<span>Apple ID</span>
+</button>
+<!-- Google Auth -->
+<button class="h-12 rounded-xl bg-surface-container-low border border-outline-variant/30 hover:bg-surface-container-high hover:border-outline-variant/60 active:scale-95 transition-all duration-150 flex items-center justify-center space-x-2 text-on-surface font-body-sm font-semibold" type="button">
+<!-- Authentic Google 'G' Vector -->
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.3 9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z" fill="#4285F4"></path>
+<path d="M5.6 14.8c-.2-.7-.4-1.4-.4-2.2s.2-1.5.4-2.2L1.9 7.5C.7 9.8 0 12.3 0 15s.7 5.2 1.9 7.5l3.7-2.9c-.2-.8-.4-1.5-.4-2.3z" fill="#FBBC05"></path>
+<path d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2-6.4-4.8L1.9 16.4C3.7 20.1 7.5 23 12 23z" fill="#34A853"></path>
+</svg>
+<span>Google</span>
+</button>
+</div>
+<!-- Footer Registration Redirection Link -->
+<div class="mt-6 mb-2 text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Don't have an account? 
+          <a class="font-semibold text-primary hover:text-primary-fixed-dim inline-flex items-center space-x-0.5 ml-1 transition-all active:scale-95 group" href="#">
+<span class="underline underline-offset-4 decoration-primary/40 group-hover:decoration-primary">Create Account</span>
+<span class="material-symbols-outlined text-[15px] group-hover:translate-x-0.5 transition-transform">chevron_right</span>
+</a>
+</p>
+</div>
+</div>
+<!-- LOWER SECTION: iOS Home Indicator (Strict HIG ergonomics) -->
+<div class="w-full pb-3 pt-2 flex flex-col items-center justify-end z-20 select-none">
+<div class="w-36 h-1 bg-on-surface/40 hover:bg-on-surface/60 rounded-full transition-colors"></div>
+</div>
+</div>
+</body></html>

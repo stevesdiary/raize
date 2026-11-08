@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raize Fitness App - Stitch MCP Design Review</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              primary: '#6366F1',
+              emerald: '#10B981',
+              amber: '#F59E0B',
+              dark: '#0B0F19',
+              card: '#111827',
+              border: '#1F2937'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #07090E; color: #F3F4F6; }
+    .screen-iframe {
+      width: 390px;
+      height: 844px;
+      border: none;
+      border-radius: 44px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 10px #1e293b, 0 0 0 12px #334155;
+    }
+  </style>
+</head>
+<body class="p-6 md:p-10 font-sans">
+  <header class="max-w-7xl mx-auto mb-10 pb-6 border-b border-gray-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 text-xs font-bold font-display uppercase tracking-widest bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 rounded-full">Stitch MCP Preview</span>
+        <span class="text-xs text-gray-400">Project: 7733307468266623394</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold font-display tracking-tight mt-2 text-white">Raize Elite Athletic OS</h1>
+      <p class="text-sm md:text-base text-gray-400 mt-1">User Journey 1: Splash &rarr; Onboarding &rarr; Sign Up &rarr; Assessment &rarr; Blueprint &rarr; Active Features</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="toggleMode('grid')" id="btn-grid" class="px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white shadow-lg transition">Grid Gallery</button>
+      <button onclick="toggleMode('interactive')" id="btn-interactive" class="px-4 py-2 text-xs font-semibold rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition">Interactive Mockup</button>
+    </div>
+  </header>
+
+  <!-- Interactive Device View -->
+  <main id="view-interactive" class="hidden max-w-6xl mx-auto flex flex-col lg:flex-row items-start justify-center gap-12">
+    <div class="w-full lg:w-1/3 space-y-3 max-h-[850px] overflow-y-auto pr-2">
+      <h2 class="text-xs uppercase tracking-wider font-bold text-gray-400">User Journey 1: Auth &amp; Onboarding</h2>
+      <div class="space-y-2">
+        <button onclick="selectScreen('00_splash_screen.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-indigo-400 font-bold uppercase">Screen 00 &bull; Launch</div>
+          <div class="text-sm font-semibold text-white">Splash Screen</div>
+          <div class="text-xs text-gray-400">Emblem halo, typography &amp; telemetry pill</div>
+        </button>
+        <button onclick="selectScreen('00b_onboarding_walkthrough.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-indigo-400 font-bold uppercase">Screen 00B &bull; Value Prop</div>
+          <div class="text-sm font-semibold text-white">Onboarding Walkthrough</div>
+          <div class="text-xs text-gray-400">MyFitnessPal + Strava + LADDER unified trio</div>
+        </button>
+        <button onclick="selectScreen('00c_sign_up.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-indigo-400 font-bold uppercase">Screen 00C &bull; Auth</div>
+          <div class="text-sm font-semibold text-white">Sign Up &amp; Registration</div>
+          <div class="text-xs text-gray-400">18+ gate, Argon2id strength, NDPA consent</div>
+        </button>
+        <button onclick="selectScreen('00d_sign_in.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-indigo-400 font-bold uppercase">Screen 00D &bull; Auth</div>
+          <div class="text-sm font-semibold text-white">Sign In &amp; Face ID</div>
+          <div class="text-xs text-gray-400">Credentials, Face ID quick-action, Social auth</div>
+        </button>
+      </div>
+
+      <h2 class="text-xs uppercase tracking-wider font-bold text-gray-400 pt-4">Assessment &amp; Core Engine</h2>
+      <div class="space-y-2">
+        <button onclick="selectScreen('01_stage_b_assessment.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-emerald-400 font-bold uppercase">Screen 01 &bull; Stage B</div>
+          <div class="text-sm font-semibold text-white">Fitness Assessment</div>
+          <div class="text-xs text-gray-400">Goal cards &amp; target timelines</div>
+        </button>
+        <button onclick="selectScreen('02_fitness_blueprint.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-emerald-400 font-bold uppercase">Screen 02 &bull; Intelligence</div>
+          <div class="text-sm font-semibold text-white">Your Fitness Blueprint</div>
+          <div class="text-xs text-gray-400">Mifflin-St Jeor TDEE, macros, 7-day schedule</div>
+        </button>
+        <button onclick="selectScreen('03_home_dashboard.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-amber-400 font-bold uppercase">Screen 03 &bull; Core Hub</div>
+          <div class="text-sm font-semibold text-white">Home Dashboard</div>
+          <div class="text-xs text-gray-400">Today's agenda, calorie ring, streak telemetry</div>
+        </button>
+        <button onclick="selectScreen('04_live_workout_tracker.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-indigo-400 font-bold uppercase">Screen 04 &bull; Workout</div>
+          <div class="text-sm font-semibold text-white">Live Workout Execution</div>
+          <div class="text-xs text-gray-400">Set logging, rest timer HUD, 1RM calculator</div>
+        </button>
+        <button onclick="selectScreen('05_gps_run_telemetry.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-emerald-400 font-bold uppercase">Screen 05 &bull; Outdoor</div>
+          <div class="text-sm font-semibold text-white">Live GPS Running Telemetry</div>
+          <div class="text-xs text-gray-400">Live pace HUD, route map, 250m privacy zone</div>
+        </button>
+        <button onclick="selectScreen('06_nutrition_diary.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-amber-400 font-bold uppercase">Screen 06 &bull; Nutrition</div>
+          <div class="text-sm font-semibold text-white">Nutrition Diary &amp; Food Log</div>
+          <div class="text-xs text-gray-400">Meal grouping, Nigerian portion scaling</div>
+        </button>
+        <button onclick="selectScreen('07_subscription_paywall.html')" class="screen-nav-btn w-full text-left p-3 rounded-xl border border-gray-800 bg-gray-900 hover:border-indigo-500/50 transition">
+          <div class="text-[10px] text-indigo-400 font-bold uppercase">Screen 07 &bull; Paywall</div>
+          <div class="text-sm font-semibold text-white">Elite Subscription Paywall</div>
+          <div class="text-xs text-gray-400">Paystack monthly/annual billing, CAMA notice</div>
+        </button>
+      </div>
+    </div>
+    <div class="flex-1 flex justify-center sticky top-10">
+      <iframe id="main-frame" src="00_splash_screen.html" class="screen-iframe"></iframe>
+    </div>
+  </main>
+
+  <!-- Grid Gallery View -->
+  <main id="view-grid" class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Screen 00: Splash -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Screen 00 &bull; Launch</span>
+          <h3 class="text-base font-bold text-white">Splash Screen</h3>
+        </div>
+        <a href="00_splash_screen.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="00_splash_screen.png" alt="Splash Screen" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 00B: Onboarding -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Screen 00B &bull; Onboarding</span>
+          <h3 class="text-base font-bold text-white">Welcome Walkthrough</h3>
+        </div>
+        <a href="00b_onboarding_walkthrough.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="00b_onboarding_walkthrough.png" alt="Onboarding Walkthrough" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 00C: Sign Up -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Screen 00C &bull; Auth</span>
+          <h3 class="text-base font-bold text-white">Sign Up &amp; Registration</h3>
+        </div>
+        <a href="00c_sign_up.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="00c_sign_up.png" alt="Sign Up Screen" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 00D: Sign In -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Screen 00D &bull; Auth</span>
+          <h3 class="text-base font-bold text-white">Sign In &amp; Face ID</h3>
+        </div>
+        <a href="00d_sign_in.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="00d_sign_in.png" alt="Sign In Screen" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 1: Assessment -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Screen 01 &bull; Assessment</span>
+          <h3 class="text-base font-bold text-white">Fitness Assessment (Stage B)</h3>
+        </div>
+        <a href="01_stage_b_assessment.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="01_stage_b_assessment.png" alt="Fitness Assessment" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 2: Blueprint -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Screen 02 &bull; Intelligence</span>
+          <h3 class="text-base font-bold text-white">Your Fitness Blueprint</h3>
+        </div>
+        <a href="02_fitness_blueprint.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="02_fitness_blueprint.png" alt="Fitness Blueprint" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 3: Home Dashboard -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Screen 03 &bull; Core Hub</span>
+          <h3 class="text-base font-bold text-white">Home Dashboard</h3>
+        </div>
+        <a href="03_home_dashboard.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="03_home_dashboard.png" alt="Home Dashboard" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 4: Live Workout -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Screen 04 &bull; Workout</span>
+          <h3 class="text-base font-bold text-white">Live Workout Execution</h3>
+        </div>
+        <a href="04_live_workout_tracker.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="04_live_workout_tracker.png" alt="Live Workout Tracker" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 5: GPS Running -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Screen 05 &bull; Outdoor</span>
+          <h3 class="text-base font-bold text-white">Live GPS Running Telemetry</h3>
+        </div>
+        <a href="05_gps_run_telemetry.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="05_gps_run_telemetry.png" alt="GPS Running Telemetry" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 6: Nutrition -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Screen 06 &bull; Nutrition</span>
+          <h3 class="text-base font-bold text-white">Nutrition Diary &amp; Food Log</h3>
+        </div>
+        <a href="06_nutrition_diary.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="06_nutrition_diary.png" alt="Nutrition Diary" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+
+    <!-- Screen 7: Paywall -->
+    <div class="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-indigo-500/40 transition flex flex-col md:col-span-2 lg:col-span-1">
+      <div class="p-4 border-b border-gray-800 flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Screen 07 &bull; Monetization</span>
+          <h3 class="text-base font-bold text-white">Elite Subscription Paywall</h3>
+        </div>
+        <a href="07_subscription_paywall.html" target="_blank" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 text-xs font-medium rounded-md text-gray-300">Open HTML &nearr;</a>
+      </div>
+      <div class="bg-black p-4 flex justify-center flex-1">
+        <img src="07_subscription_paywall.png" alt="Subscription Paywall" class="rounded-lg max-h-[500px] object-contain shadow-md">
+      </div>
+    </div>
+  </main>
+
+  <footer class="max-w-7xl mx-auto mt-16 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+    Raize Unified Fitness Platform &bull; Built with Stitch MCP, Fastify 5.x, PostgreSQL 17, and Apple Human Interface Guidelines.
+  </footer>
+
+  <script>
+    function toggleMode(mode) {
+      const grid = document.getElementById('view-grid');
+      const interactive = document.getElementById('view-interactive');
+      const btnGrid = document.getElementById('btn-grid');
+      const btnInteractive = document.getElementById('btn-interactive');
+
+      if (mode === 'grid') {
+        grid.classList.remove('hidden');
+        interactive.classList.add('hidden');
+        btnGrid.className = 'px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white shadow-lg transition';
+        btnInteractive.className = 'px-4 py-2 text-xs font-semibold rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition';
+      } else {
+        grid.classList.add('hidden');
+        interactive.classList.remove('hidden');
+        btnInteractive.className = 'px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 text-white shadow-lg transition';
+        btnGrid.className = 'px-4 py-2 text-xs font-semibold rounded-lg bg-gray-800 text-gray-300 hover:bg-gray-700 transition';
+      }
+    }
+
+    function selectScreen(htmlFile) {
+      document.getElementById('main-frame').src = htmlFile;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+# Root Git Ignore for Raize Unified Fitness Platform
+
+# macOS / OS Files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Node.js / Backend
+backend/node_modules/
+backend/dist/
+backend/.pnpm-store/
+backend/.env
+backend/.env.local
+backend/*.log
+backend/coverage/
+
+# Flutter / Mobile
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.pub-cache/
+mobile/.pub/
+mobile/build/
+mobile/.packages
+mobile/ios/Flutter/Generated.xcconfig
+mobile/ios/Flutter/app.framework
+mobile/ios/Flutter/Flutter.framework
+mobile/ios/Flutter/Flutter.podspec
+mobile/ios/Pods/
+mobile/macos/Flutter/ephemeral/
+mobile/macos/Pods/
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/app/build/
+
+# IDE / Editor Files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.sw?
+*~
+*.orig
+
+# Credentials & Secrets
+*.pem
+*.key
+*.cert
+*.p12
+*.jks
+*.keystore
+id_rsa*
+*.env
+*.env.*
+!.env.example
+
+
+# Agent Workspace & Skills
+.agents/
+skills-lock.json
+
